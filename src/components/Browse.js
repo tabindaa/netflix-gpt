@@ -2,22 +2,18 @@ import Header from "./Header";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTrendingMovies from "../hooks/useTrendingMovies";
+import useTopRatedTVSeries from "../hooks/useTopRatedTVSeries";
 
 const Browse = () => {
-  const moviesList = useNowPlayingMovies();
+  useNowPlayingMovies();
+  usePopularMovies();
+  useTrendingMovies();
+  useTopRatedTVSeries();
 
   return (
     <div>
-      <Header />
-      <MainContainer />
-      <SecondaryContainer />
-      <div className="relative">
-        {moviesList?.length &&
-          moviesList.map((movie) => {
-            return movie.id;
-          })}
-      </div>
-
       {/* {
         MainCOntainer
           -VideoBackground
@@ -26,6 +22,9 @@ const Browse = () => {
           -MoviesList
           -Cards
       } */}
+      <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };

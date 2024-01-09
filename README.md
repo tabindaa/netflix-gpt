@@ -1,10 +1,10 @@
 # Netflix GPT
-Create react app
-configured Tailwindcss
-Header
-Routing
-Signin/signup form
-calidation
+#Create react app
+#configured Tailwindcss
+#Header
+#Routing
+#Signin/signup form
+#validation
 
 
 Feature
