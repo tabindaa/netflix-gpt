@@ -11,7 +11,6 @@ const usePopularMovies = () => {
       options
     );
     const popularMovies = await result.json();
-    console.log(popularMovies.results);
     dispatch(addPopularMovies(popularMovies.results));
   };
 

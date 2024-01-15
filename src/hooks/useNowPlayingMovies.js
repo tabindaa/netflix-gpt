@@ -4,7 +4,6 @@ import { addNowPlayingMovies } from "../utils/moviesSlice";
 import { options } from "../helper/Constant";
 
 const useNowPlayingMovies = () => {
-  // const [moviesList, setMoviesList] = useState([]);
   const dispatch = useDispatch();
   const getNowPlayingMovies = async () => {
     const response = await fetch(
@@ -12,8 +11,6 @@ const useNowPlayingMovies = () => {
       options
     );
     const jsonResult = await response.json();
-    // setMoviesList(jsonResult.results);
-    console.log(jsonResult.results);
     dispatch(addNowPlayingMovies(jsonResult.results));
   };
   useEffect(() => {
