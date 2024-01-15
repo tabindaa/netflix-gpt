@@ -6,7 +6,7 @@ import { netflix_bg_logo } from "../helper/Constant";
 const GptSearch = () => {
   return (
     <div className="w-screen">
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img src={netflix_bg_logo} alt="logo" />
       </div>
       <GptSearchBar />
