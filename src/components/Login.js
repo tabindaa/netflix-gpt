@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
 import { netflix_bg_logo } from "../helper/Constant";
 import { checkValidity } from "../utils/validate";
@@ -89,7 +89,7 @@ const Login = () => {
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-3/12 p-12 text-white bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 text-white bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80"
       >
         <h1 className="text-3xl font-bold py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}

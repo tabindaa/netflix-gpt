@@ -48,10 +48,10 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute w-screen z-10 px-8 py-2 bg-gradient-to-b from-gray flex justify-between">
-      <img className="w-44" src={netflix_logo} alt="logo" />
+    <div className="absolute w-screen z-10 px-8 py-2 md:bg-gradient-to-b from-gray justify-between flex flex-col md:flex-row">
+      <img className="w-44 mx-auto md:mx-0" src={netflix_logo} alt="logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {showGptSearch && (
             <select
               className="p-2 m-2 bg-gray-900 rounded-lg text-white"
@@ -73,7 +73,11 @@ const Header = () => {
             {showGptSearch ? "Browse" : "🔍 Search"}
           </button>
           <span className="p-2 m-2 text-white">{user?.displayName}</span>
-          <img className="w-12 h-12 p-2 m-2" src={user.photoURL} alt="Logout" />
+          <img
+            className="hidden md:inline-block w-12 h-12 p-2 m-2"
+            src={user.photoURL}
+            alt="Logout"
+          />
           <button className="text-white font-bold" onClick={signOutHandle}>
             Sign Out
           </button>

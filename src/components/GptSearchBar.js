@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import lang from "../helper/languageConstants";
 import { options } from "../helper/Constant";
 import { updateSearchedMovies } from "../utils/gptSearchSlice";
+// import openai from "../utils/openAI";
 
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const dispatch = useDispatch();
   const searchRef = useRef(null);
   const handleGptSearch = async () => {
+    // main()
     const searchdKeyword = searchRef.current?.value;
     const response = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
@@ -33,9 +35,9 @@ const GptSearchBar = () => {
   // }
 
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="pt-[35%] md:pt-[10%] flex justify-center">
       <form
-        className="w-1/2 bg-black grid grid-cols-12 rounded-lg"
+        className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-lg"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
