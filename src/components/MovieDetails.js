@@ -7,7 +7,6 @@ const MovieDetails = () => {
   const userSelectedMovie = useSelector(
     (store) => store.movies?.userSelectedMovie
   );
-  console.log(userSelectedMovie);
   const { title, original_name, overview, id } = userSelectedMovie;
   return (
     <div>
